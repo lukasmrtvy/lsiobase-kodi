@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv bash
+
+exec s6-setuidgid abc /usr/lib/x86_64-linux-gnu/kodi/kodi.bin --standalone ${OVERRIDE_OPTIONS[@]}
