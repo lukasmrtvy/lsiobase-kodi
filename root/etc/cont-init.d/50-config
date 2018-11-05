@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bash
+
+OVERRIDE_OPTIONS=("${CUSTOM_OVERRIDE_OPTIONS}")
+
+if [ "${#OVERRIDE_OPTIONS[@]}" -gt 0 ]; then
+  printf "${OVERRIDE_OPTIONS}" > /var/run/s6/container_environment/OVERRIDE_OPTIONS
+else
+  unset OVERRIDE_OPTIONS
+fi
+
+chown -R abc:abc \
+	/config
+
+usermod -a -G audio,video abc
