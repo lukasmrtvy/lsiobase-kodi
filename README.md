@@ -22,7 +22,7 @@ WantedBy=multi-user.target
 
 ## Allow X11 host
 ```
-xhost +local:`docker inspect --format='{{ .Config.Hostname }}' kodi
+xhost +local:`docker inspect --format='{{ .Config.Hostname }}' kodi`
 ```
 
 ## Run
