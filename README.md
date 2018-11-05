@@ -27,7 +27,7 @@ xhost +local:`docker inspect --format='{{ .Config.Hostname }}' kodi
 
 ## Run
 ```
-sudo docker pull lukasmrtvy/docker-kodi ; 
-sudo docker rm -f kodi ; 
-sudo docker run -d --restart always --env DISPLAY=:0 -p 9090:9090 -p 8080:8080 --device /dev/snd --device /dev/dri --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --name=kodi -v kodi:/config/.kodi kodi
+docker pull lukasmrtvy/docker-kodi ; 
+docker rm -f kodi ; 
+docker run -d --restart always --env DISPLAY=:0 -p 9090:9090 -p 8080:8080 --device /dev/snd --device /dev/dri --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --name=kodi -v kodi:/config/.kodi kodi
 ```
